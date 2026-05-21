@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAJO PRESIÓN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="estilo.css" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <div class="pantalla-splash" id="pantallaSplash">
+        <div class="splash-imagen" id="splash1">
+            <img src="img/tecnm.png">
+        </div>
+        <div class="splash-imagen" id="splash2">
+            <img src="img/itm.png">
+        </div>
+        <div class="splash-imagen" id="splash3">
+            <img src="img/LOGO-export.png">
+        </div>
+    </div>
+
+   
+    <div class="pantalla-inicio" id="pantallaInicio" style="display:none;">
+        <div class="inicio-panel">
+            <h1>BAJO PRESIÓN</h1>
+            <p class="subtitulo">Instituto Tecnológico de Morelia</p>
+            <p class="descripcion">Has sido nombrado Director del instituto. Cada decisión que tomes afectará la Economía, la Sociedad y el Medio Ambiente del campus.</p>
+            <button class="boton-jugar" onclick="iniciarTutorial()">Jugar</button>
+        </div>
+    </div>
+
+    
+    <div class="pantalla-tutorial" id="pantallaTutorial" style="display:none;">
+        <div class="tutorial-contenido" id="tutorialContenido"></div>
+    </div>
+
+    
+    <div class="pantalla-juego" id="pantallaJuego">
+        <div class="zona-superior">
+            <div class="pagina-numero">Semana <span id="contadorSemanas">1</span> de gestión</div>
+            <div class="contenedor-metricas">
+                <div class="metrica metrica-economia">
+                    <span class="metrica-etiqueta">Eco</span>
+                    <div class="metrica-barra-contenedor"><div class="metrica-barra" id="barraEconomia"></div></div>
+                </div>
+                <div class="metrica metrica-sociedad">
+                    <span class="metrica-etiqueta">Soc</span>
+                    <div class="metrica-barra-contenedor"><div class="metrica-barra" id="barraSociedad"></div></div>
+                </div>
+                <div class="metrica metrica-medio-ambiente">
+                    <span class="metrica-etiqueta">Amb</span>
+                    <div class="metrica-barra-contenedor"><div class="metrica-barra" id="barraMedioAmbiente"></div></div>
+                </div>
+            </div>
+            <div class="contenedor-cambio-stats">
+                <div class="cambio-stat" id="cambioEco"><span class="cambio-stat-icono" id="cambioEcoIcono"></span><span class="cambio-stat-label">Eco</span></div>
+                <div class="cambio-stat" id="cambioSoc"><span class="cambio-stat-icono" id="cambioSocIcono"></span><span class="cambio-stat-label">Soc</span></div>
+                <div class="cambio-stat" id="cambioAmb"><span class="cambio-stat-icono" id="cambioAmbIcono"></span><span class="cambio-stat-label">Amb</span></div>
+            </div>
+            <div class="timer">
+                <div class="cronometro" id="cronometro">30.00</div>
+            </div>
+        </div>
+
+        <div class="zona-juego" id="zonaJuego">
+            <div class="mazo-carta mazo-carta-1 dorso"></div>
+            <div class="mazo-carta mazo-carta-2 dorso"></div>
+            <div class="carta-contenedor" id="cartaContenedor">
+                <div class="carta-wrapper" id="cartaWrapper">
+                    <div class="carta-frente" id="cartaFrente"></div>
+                </div>
+            </div>
+            <div class="indicador-lateral izquierda" id="indicadorIzquierda">
+                <span class="indicador-flecha">◄</span><span class="indicador-texto"></span>
+            </div>
+            <div class="indicador-lateral derecha" id="indicadorDerecha">
+                <span class="indicador-flecha">►</span><span class="indicador-texto"></span>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="pantalla-game-over" id="pantallaGameOver" style="display:none;">
+        <div class="game-over-panel">
+            <h2>Fin de tu gestión</h2>
+            <p class="motivo" id="motivoDerrota"></p>
+            <p class="critica" id="metricaCritica"></p>
+            <p class="nuevo-record" id="nuevoRecord">¡NUEVO RÉCORD!</p>
+            <p class="semanas">Semanas de gestión: <span id="semanasFinales">0</span></p>
+            <p class="semanas"></p>
+
+            <p class="record">Récord personal:<span id="recordSemanas">0</span></p>
+
+            <button class="boton-jugar" onclick="reiniciarJuego()">
+             Jugar de nuevo
+              </button>
+              </div>
+              </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
